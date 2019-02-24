@@ -8,13 +8,59 @@ NectraCreditCell 是一个为 Preference 封装的 Credit Cell 库，用于便�
 Forked From @TranslucentMessage.
 
 #### Usage
-* 在项目界面工程根目录下的的 `Makefile` 文件中，告知编译器进行编译。
+1. 在项目界面工程根目录下的的 `Makefile` 文件中，告知编译器进行编译。
 ```makefile
 CPUTurboSettings_FILES = NectraCreditOption.m NectraCreditService.m NectraCreditCell.m
 ```
-* 在项目界面工程`Resource`目录下的 `Root.plist` 文件中传值。
-* 正如最上方的截图可以看到，有多种 icon 可以使用。
+2. 修改`NectraCreditCell.m`中的宏定义
+```objective-c
+#define PREFERENCE_BUNDLE_PATH  @"/Library/PreferenceBundles/xxxxxxx.bundle"
+```
+3. 在项目界面工程`Resource`目录下的 `Root.plist` 文件中编写`xml`代码
 
+#### 完整使用实例
+```xml
+<dict>
+<key>creditOptions</key>
+<array>
+<dict>
+<key>service</key>
+<string>website</string>
+<key>username</key>
+<string>https:/7float.com/</string>
+</dict>
+<dict>
+<key>service</key>
+<string>twitter</string>
+<key>username</key>
+<string>ryaneddisford</string>
+</dict>
+<dict>
+<key>service</key>
+<string>email</string>
+<key>username</key>
+<string>lazysloths@yahoo.com</string>
+</dict>
+<dict>
+<key>service</key>
+<string>github</string>
+<key>username</key>
+<string>polichan</string>
+</dict>
+</array>
+<key>avatarImage</key>
+<string>Hexwell.png</string>
+<key>creditPosition</key>
+<string>iOS Developer</string>
+<key>creditName</key>
+<string>Hexwell</string>
+<key>height</key>
+<integer>84</integer>
+<key>cellClass</key>
+<string>NectraCreditCell</string>
+</dict>
+```
+正如最上方的截图可以看到，我们提供了多种 icon 可供选用。
 ##### 个人网站
 ```xml
 <dict>
@@ -100,48 +146,7 @@ CPUTurboSettings_FILES = NectraCreditOption.m NectraCreditService.m NectraCredit
 <string> YouTube 地址</string>
 </dict>
 ```
-#### 完整使用实例
-```xml
-<dict>
-<key>creditOptions</key>
-<array>
-<dict>
-<key>service</key>
-<string>website</string>
-<key>username</key>
-<string>https:/7float.com/</string>
-</dict>
-<dict>
-<key>service</key>
-<string>twitter</string>
-<key>username</key>
-<string>ryaneddisford</string>
-</dict>
-<dict>
-<key>service</key>
-<string>email</string>
-<key>username</key>
-<string>lazysloths@yahoo.com</string>
-</dict>
-<dict>
-<key>service</key>
-<string>github</string>
-<key>username</key>
-<string>polichan</string>
-</dict>
-</array>
-<key>avatarImage</key>
-<string>Hexwell.png</string>
-<key>creditPosition</key>
-<string>iOS Developer</string>
-<key>creditName</key>
-<string>Hexwell</string>
-<key>height</key>
-<integer>84</integer>
-<key>cellClass</key>
-<string>NectraCreditCell</string>
-</dict>
-```
+
 #### 头像类的声明应该如上面所示
 ```xml
 <key>avatarImage</key>
