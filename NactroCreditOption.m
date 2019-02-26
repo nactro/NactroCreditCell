@@ -1,6 +1,6 @@
 //
-//  NectraCreditOption.m
-//  NectraCreditCell
+//  NactroCreditOption.m
+//  NactroCreditCell
 //
 //  Copyright (c) 2017 Dynastic Development
 //
@@ -22,20 +22,20 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 //
-//  Modify By Nectra Development
+//  Modify By Nactro Development
 //
-#import "NectraCreditOption.h"
-@implementation NectraCreditOption
+#import "NactroCreditOption.h"
+@implementation NactroCreditOption
 
 
-- (instancetype)initWithUsername:(NSString *)username service:(NectraCreditService *)service {
+- (instancetype)initWithUsername:(NSString *)username service:(NactroCreditService *)service {
     self = [super init];
     self.username = username;
     self.service = service;
     return self;
 }
 
-- (instancetype)initWithUsername:(NSString *)username service:(NectraCreditService *)service forcedFormattedUsername:(NSString *)forcedFormattedUsername {
+- (instancetype)initWithUsername:(NSString *)username service:(NactroCreditService *)service forcedFormattedUsername:(NSString *)forcedFormattedUsername {
     self = [super init];
     self.username = username;
     self.service = service;

@@ -1,6 +1,6 @@
 //
-//  NectraCreditCell.m
-//  NectraCreditCell
+//  NactroCreditCell.m
+//  NactroCreditCell
 //
 //  Copyright (c) 2017 Dynastic Development
 //
@@ -23,15 +23,15 @@
 //  SOFTWARE.
 //
 
-#import "NectraCreditCell.h"
-#import "NectraCreditOption.h"
-#import "NectraCreditService.h"
+#import "NactroCreditCell.h"
+#import "NactroCreditOption.h"
+#import "NactroCreditService.h"
 
-#define PREFERENCE_BUNDLE_PATH  @"/Library/PreferenceBundles/CPUTurboSettings.bundle"
+#define PREFERENCE_BUNDLE_PATH  @"/Library/PreferenceBundles/Settings.bundle"
 #define BUTTON_HEIGHT   20
 #define BUTTON_SPACING  14
 
-@implementation NectraCreditCell
+@implementation NactroCreditCell
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier specifier:(PSSpecifier *)specifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier specifier:specifier];
@@ -138,7 +138,7 @@
         [subview removeFromSuperview];
     }
     [_creditOptions enumerateObjectsUsingBlock:^(id x, NSUInteger index, BOOL *stop) {
-        NectraCreditOption *creditOption = x;
+        NactroCreditOption *creditOption = x;
         UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
         [button setImage:[self imageFromFilename:creditOption.service.imageName] forState:UIControlStateNormal];
         [button setAccessibilityLabel:[creditOption getActionTitle]];
@@ -177,8 +177,8 @@
             NSString *serviceName = option[@"service"];
             NSString *forcedFormattedUsername = option[@"forcedFormattedUsername"];
             NSString *username = option[@"username"];
-            NectraCreditService *service = [NectraCreditService serviceWithName:serviceName];
-            NectraCreditOption *option = [[NectraCreditOption alloc] initWithUsername:username service:service forcedFormattedUsername:forcedFormattedUsername];
+            NactroCreditService *service = [NactroCreditService serviceWithName:serviceName];
+            NactroCreditOption *option = [[NactroCreditOption alloc] initWithUsername:username service:service forcedFormattedUsername:forcedFormattedUsername];
             [newCreditOptions addObject:option];
         }
     }

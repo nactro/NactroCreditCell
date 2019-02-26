@@ -2,8 +2,8 @@
   <img src="https://raw.githubusercontent.com/nectra/NectraCreditCell/master/Screenshots/1.JPG" alt="screenshot" title="screenshot">
 </p>
 
-# NectraCreditCell
-NectraCreditCell 是一个为 Preference 封装的 Credit Cell 库，用于便捷的展示 Credit 信息
+# NactroCreditCell
+NactroCreditCell 是一个为 Preference 封装的 Credit Cell 库，用于便捷的展示 Credit 信息
 </br>
 Forked From @TranslucentMessage.
 
@@ -162,7 +162,7 @@ CPUTurboSettings_FILES = NectraCreditOption.m NectraCreditService.m NectraCredit
 ```
 
 ## License
-NectraCreditCell is available under the MIT license. See the LICENSE file for more info.
+NactroCreditCell is available under the MIT license. See the LICENSE file for more info.
 
 ## Thanks
 Thanks to @Dynastic Open Source this sophisticated Credit Cell in his TranslucentMessages project :)

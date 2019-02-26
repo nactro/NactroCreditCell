@@ -1,9 +1,9 @@
 #import <UIKit/UIKit.h>
 #import <Preferences/PSSpecifier.h>
 #import <Preferences/PSTableCell.h>
-@class NectraCreditOption, NectraCreditService;
+@class NactroCreditOption, NactroCreditService;
 
-@interface NectraCreditCell : PSTableCell
+@interface NactroCreditCell : PSTableCell
 @property (nonatomic, strong) UILabel *nameLabel;
 @property (nonatomic, strong) UILabel *positionLabel;
 @property (nonatomic, strong) UIImageView *avatarImageView;

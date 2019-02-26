@@ -1,6 +1,6 @@
 //
-//  NectraCreditOption.m
-//  NectraCreditCell
+//  NactroCreditOption.m
+//  NactroCreditCell
 //
 //  Copyright (c) 2017 Dynastic Development
 //
@@ -22,12 +22,12 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 //
-//  Modify By Nectra Development
+//  Modify By Nactro Development
 //
 
-#import "NectraCreditService.h"
+#import "NactroCreditService.h"
 
-@implementation NectraCreditService
+@implementation NactroCreditService
 
 - (instancetype)initWithUsernameFormatter:(NSString *)usernameFormatter actionTitleFormatter:(NSString *)actionTitleFormatter linkFormatters:(NSArray *)linkFormatters imageName:(NSString *)imageName {
     self = [super init];
@@ -47,18 +47,18 @@
     return self;
 }
 
-- (NSString *)getFormattedUsernameForOption:(NectraCreditOption *)option {
+- (NSString *)getFormattedUsernameForOption:(NactroCreditOption *)option {
     if (option.forcedFormattedUsername == nil) {
         return [self.usernameFormatter stringByReplacingOccurrencesOfString:@"{username}" withString:option.username];
     }
     return option.forcedFormattedUsername;
 }
 
-- (NSString *)getActionTitleForOption:(NectraCreditOption *)option {
+- (NSString *)getActionTitleForOption:(NactroCreditOption *)option {
     return [self.actionTitleFormatter stringByReplacingOccurrencesOfString:@"{username}" withString:[self getFormattedUsernameForOption:option]];
 }
 
-- (NSArray *)getLinksForOption:(NectraCreditOption *)option {
+- (NSArray *)getLinksForOption:(NactroCreditOption *)option {
     NSMutableArray *links = [NSMutableArray array];
     for (NSString *linkFormatter in self.linkFormatters) {
         NSURL *url = [NSURL URLWithString:[linkFormatter stringByReplacingOccurrencesOfString:@"{username}" withString:option.username]];
@@ -71,27 +71,27 @@
 
 // Pre-set:
 
-+ (NectraCreditService *)serviceWithName:(NSString *)name {
++ (NactroCreditService *)serviceWithName:(NSString *)name {
     if ([name isEqualToString:@"website"]) {
-        return [[NectraCreditService alloc] initWithActionTitleFormatter:@"View website" linkFormatters:@[@"{username}"] imageName:@"Service-Website"];
+        return [[NactroCreditService alloc] initWithActionTitleFormatter:@"View website" linkFormatters:@[@"{username}"] imageName:@"Service-Website"];
     } else if ([name isEqualToString:@"twitter"]) {
-        return [[NectraCreditService alloc] initWithUsernameFormatter:@"@{username}" actionTitleFormatter:@"Follow {username} on Twitter" linkFormatters:@[@"tweetbot:///user_profile/{username}", @"twitterrific:///profile?screen_name={username}", @"tweetings:///user?screen_name={username}", @"twitter://user?screen_name={username}", @"https://mobile.twitter.com/{username}"] imageName:@"Service-Twitter"];
+        return [[NactroCreditService alloc] initWithUsernameFormatter:@"@{username}" actionTitleFormatter:@"Follow {username} on Twitter" linkFormatters:@[@"tweetbot:///user_profile/{username}", @"twitterrific:///profile?screen_name={username}", @"tweetings:///user?screen_name={username}", @"twitter://user?screen_name={username}", @"https://mobile.twitter.com/{username}"] imageName:@"Service-Twitter"];
     } else if ([name isEqualToString:@"reddit"]) {
-        return [[NectraCreditService alloc] initWithUsernameFormatter:@"/u/{username}" actionTitleFormatter:@"View {username} on Reddit" linkFormatters:@[@"https://m.reddit.com/user/{username}"] imageName:@"Service-Reddit"];
+        return [[NactroCreditService alloc] initWithUsernameFormatter:@"/u/{username}" actionTitleFormatter:@"View {username} on Reddit" linkFormatters:@[@"https://m.reddit.com/user/{username}"] imageName:@"Service-Reddit"];
     } else if ([name isEqualToString:@"github"]) {
-        return [[NectraCreditService alloc] initWithActionTitleFormatter:@"View {username} on GitHub" linkFormatters:@[@"https://www.github.com/{username}"] imageName:@"Service-GitHub"];
+        return [[NactroCreditService alloc] initWithActionTitleFormatter:@"View {username} on GitHub" linkFormatters:@[@"https://www.github.com/{username}"] imageName:@"Service-GitHub"];
     } else if ([name isEqualToString:@"googlePlus"]) {
-        return [[NectraCreditService alloc] initWithActionTitleFormatter:@"Follow {username} on Google Plus" linkFormatters:@[@"https://plus.google.com/{username}"] imageName:@"Service-GooglePlus"];
+        return [[NactroCreditService alloc] initWithActionTitleFormatter:@"Follow {username} on Google Plus" linkFormatters:@[@"https://plus.google.com/{username}"] imageName:@"Service-GooglePlus"];
     } else if ([name isEqualToString:@"instagram"]) {
-        return [[NectraCreditService alloc] initWithUsernameFormatter:@"@{username}" actionTitleFormatter:@"Follow {username} on Instagram" linkFormatters:@[@"https://www.instagram.com/{username}"] imageName:@"Service-Instagram"];
+        return [[NactroCreditService alloc] initWithUsernameFormatter:@"@{username}" actionTitleFormatter:@"Follow {username} on Instagram" linkFormatters:@[@"https://www.instagram.com/{username}"] imageName:@"Service-Instagram"];
     } else if ([name isEqualToString:@"youtube"]) {
-    return [[NectraCreditService alloc] initWithActionTitleFormatter:@"Subscribe to {username} on YouTube" linkFormatters:@[@"https://www.youtube.com/"] imageName:@"Service-YouTube"];
+    return [[NactroCreditService alloc] initWithActionTitleFormatter:@"Subscribe to {username} on YouTube" linkFormatters:@[@"https://www.youtube.com/"] imageName:@"Service-YouTube"];
     } else if ([name isEqualToString:@"paypal"]) {
-        return [[NectraCreditService alloc] initWithActionTitleFormatter:@"Donate to {username} using PayPal" linkFormatters:@[@"https://www.paypal.me/{username}"] imageName:@"Service-PayPal"];
+        return [[NactroCreditService alloc] initWithActionTitleFormatter:@"Donate to {username} using PayPal" linkFormatters:@[@"https://www.paypal.me/{username}"] imageName:@"Service-PayPal"];
     } else if ([name isEqualToString:@"email"]) {
-        return [[NectraCreditService alloc] initWithActionTitleFormatter:@"Email {username}" linkFormatters:@[@"mailto:{username}"] imageName:@"Service-Email"];
+        return [[NactroCreditService alloc] initWithActionTitleFormatter:@"Email {username}" linkFormatters:@[@"mailto:{username}"] imageName:@"Service-Email"];
     }
-    return [[NectraCreditService alloc] initWithActionTitleFormatter:@"Unknown" linkFormatters:@[] imageName:@"Service-Unknown"];
+    return [[NactroCreditService alloc] initWithActionTitleFormatter:@"Unknown" linkFormatters:@[] imageName:@"Service-Unknown"];
 }
 
 @end
