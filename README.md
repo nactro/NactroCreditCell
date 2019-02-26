@@ -1,5 +1,5 @@
 <p >
-  <img src="https://raw.githubusercontent.com/nectra/NectraCreditCell/master/Screenshots/1.JPG" alt="screenshot" title="screenshot">
+  <img src="https://raw.githubusercontent.com/nactro/NactroCreditCell/master/Screenshots/1.JPG" alt="screenshot" title="screenshot">
 </p>
 
 # NactroCreditCell
